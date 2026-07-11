@@ -1,2 +1,8 @@
-text = "h el l o"
-print(text.replace(" ", ""))
+user = {
+    "name": "Sarah",
+    "role": "Engineer"
+}
+
+user ["role"] = "Manager"
+print(user["name"])
+print(user["role"])
