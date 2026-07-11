@@ -6,3 +6,4 @@ user = {
 user ["role"] = "Manager"
 print(user["name"])
 print(user["role"])
+print("hello")
