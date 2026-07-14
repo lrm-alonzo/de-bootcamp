@@ -1,9 +1,3 @@
-user = {
-    "name": "Sarah",
-    "role": "Engineer"
-}
+cities = ["Tokyo", "Paris", "NY"]
 
-user ["role"] = "Manager"
-print(user["name"])
-print(user["role"])
-print("hello")
+print(len(cities))
