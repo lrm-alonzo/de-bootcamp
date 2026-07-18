@@ -45,7 +45,7 @@ while proceed == "Y" or proceed == "y":
         if first_num == 0 or sec_num == 0: # GUARD AGAINST DIVISION BY 0
             print("DO NOT INPUT 0 FOR DIVISION!")
         else:
-            print(f"The difference is: " + str(divide(first_num,sec_num)))
+            print(f"The quotient is: " + str(divide(first_num,sec_num)))
     else:
         print ("Invalid Operator")
 
