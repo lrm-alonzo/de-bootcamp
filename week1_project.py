@@ -9,7 +9,7 @@ print (f"Hi! " + name)
 proceed = "Y"
 
 # MAIN LOOP
-# USED OR STATEMENT SO THAT IT WILL NOT BE CASE SENSITIVE
+# USED .lower() SO THAT IT WILL NOT BE CASE SENSITIVE
 while proceed.lower() == "y":
 
 
