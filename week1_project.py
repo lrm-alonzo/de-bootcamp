@@ -2,7 +2,7 @@
 
 # INPUT NAME
 name = input("What's your name: ")
-print (f"Hi! " + name)
+print (f"Hi! {name}")
 
 # INITIALIZE LOOP CONTROL
 # PUT THE LOOP HERE SO THAT IT WILL START AGAIN TO ASK USER TO INPUT NUMBERS.
@@ -38,20 +38,20 @@ while proceed.lower() == "y":
     # USED STR, SINCE IT CANNOT BE CONCATINATED WITH OTHER TEXT IF THE ANSWERS ARE NOT CONVERTED TO STRING.
     if operator == "+":
         result = add(first_num,sec_num)
-        print(f"The sum is: " + str(result))
+        print(f"The sum is: {result}")
     elif operator == "-":
         result = subtract(first_num,sec_num)
-        print(f"The difference is: " + str(result))
+        print(f"The difference is: {result}")
     elif operator == "*":
         result = multiply(first_num,sec_num)
-        print(f"The product is: " + str(result))
+        print(f"The product is: {result}")
     elif operator == "/":
         if first_num == 0 or sec_num == 0: # GUARD AGAINST DIVISION BY 0
             print("DO NOT INPUT 0 FOR DIVISION!")
             result = None
         else:
             result = divide(first_num,sec_num)
-            print(f"The quotient is: " + str(result))
+            print(f"The quotient is: {result}")
     else:
         print ("Invalid Operator")
         result = None
@@ -68,20 +68,20 @@ while proceed.lower() == "y":
 
             if operator == "+":
                 result = add(result, sec_num)
-                print(f"The sum is: " + str(result))
+                print(f"The sum is: {result}")
             elif operator == "-":
                 result = subtract(result, sec_num)
-                print(f"The difference is: " + str(result))
+                print(f"The difference is: {result}")
             elif operator == "*":
                 result = multiply(result, sec_num)
-                print(f"The product is: " + str(result))
+                print(f"The product is: {result}")
             elif operator == "/":
                 if sec_num == 0:
                     print("ERROR: DO NOT INPUT 0 FOR DIVISION!")
                     result = None
                 else:
                     result = divide(result, sec_num)
-                    print(f"The quotient is: " + str(result))
+                    print(f"The quotient is: {result}")
             else:
                 print("Invalid Operator")
                 result = None
@@ -90,4 +90,4 @@ while proceed.lower() == "y":
     # IT WILL AUTOMATICALLY EXIT THE LOOP ONCE THE INPUT FOR THIS IS NOT Y OR y
     proceed = input("Do you still want to use the calculator? (Y or N): ")
 
-print(f"Thank you for using Calculator " + name + "!")
+print(f"Thank you for using Calculator {name}!")
