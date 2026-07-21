@@ -2,7 +2,7 @@
 
 # INPUT NAME
 name = input("What's your name: ")
-print (f"Hi! {name}")
+print(f"Hi! {name}")
 
 # INITIALIZE LOOP CONTROL
 # PUT THE LOOP HERE SO THAT IT WILL START AGAIN TO ASK USER TO INPUT NUMBERS.
@@ -53,7 +53,7 @@ while proceed.lower() == "y":
             result = divide(first_num,sec_num)
             print(f"The quotient is: {result}")
     else:
-        print ("Invalid Operator")
+        print("Invalid Operator")
         result = None
 
     # LOOP TO CONTINUE USING THE RESULT
