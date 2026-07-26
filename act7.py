@@ -9,7 +9,7 @@ tech.append("Microsoft")
 print(tech)
 
 # 2. Print the second item
-print(tech[1:2])
+print(tech[1])
 
 # 3. Print the length
 print(len(tech))
