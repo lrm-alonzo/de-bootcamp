@@ -58,34 +58,43 @@ CREATE TABLE fact_order_items (
 );
 
 --PROCEDURE
-WITH monthly_product_sales AS (
-	SELECT		TO_CHAR(fo.order_date, 'MONTH') AS month_name,
-				TO_CHAR(fo.order_date, 'YYYY') AS year,
-				fo.order_id,
-				foi.product_id,
-				foi.unit_price*quantity AS total_amt
-	FROM		fact_orders fo
-	INNER JOIN	fact_order_items foi
-				ON fo.order_id = foi.order_id
-),
-monthly_product_details AS (
-	SELECT		ps.month_name,
-				ps.year,
-				dp.name product_name,
-				sum(total_amt) total_sales
-	FROM		monthly_product_sales ps
-	INNER JOIN	dim_products dp
-				ON ps.product_id = dp.product_id
-	GROUP BY 	ps.month_name,
-				ps.year,
-				dp.name
-),
-monthly_product_ranking AS (
-	SELECT		*,
-				DENSE_RANK() OVER (PARTITION BY month_name, year ORDER BY total_sales desc) AS product_rank
-	FROM 		monthly_product_details
-)
-SELECT		* 
-FROM 		monthly_product_ranking
-ORDER BY	product_rank
-;
+CREATE OR REPLACE PROCEDURE monthly_product()
+LANGUAGE plpgsql
+AS $$
+BEGIN
+	-- Clean up records older than 5 years
+    DELETE FROM monthly_product
+    WHERE year::int < EXTRACT(YEAR FROM CURRENT_DATE) - 5;
+
+	--INSERT OF NEW RECORDS
+    INSERT INTO monthly_product (month_name, year, product_name, total_sales, product_rank)
+    WITH monthly_product_sales AS (
+        SELECT  TO_CHAR(fo.order_date, 'MONTH') AS month_name,
+                TO_CHAR(fo.order_date, 'YYYY') AS year,
+                fo.order_id,
+                foi.product_id,
+                foi.unit_price * quantity AS total_amt
+        FROM    fact_orders fo
+        INNER JOIN fact_order_items foi
+                ON fo.order_id = foi.order_id
+    ),
+    monthly_product_details AS (
+        SELECT  ps.month_name,
+                ps.year,
+                dp.name AS product_name,
+                SUM(total_amt) AS total_sales
+        FROM    monthly_product_sales ps
+        INNER JOIN dim_products dp
+                ON ps.product_id = dp.product_id
+        GROUP BY ps.month_name, ps.year, dp.name
+    ),
+    monthly_product_ranking AS (
+        SELECT  *,
+                DENSE_RANK() OVER (PARTITION BY month_name, year ORDER BY total_sales DESC) AS product_rank
+        FROM    monthly_product_details
+    )
+    SELECT month_name, year, product_name, total_sales, product_rank
+    FROM monthly_product_ranking
+    ORDER BY product_rank;
+END;
+$$;
