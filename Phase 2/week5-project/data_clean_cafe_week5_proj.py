@@ -1,9 +1,10 @@
 import pandas as pd
 
 # File paths
-import_path = r"C:\Users\Lynne\Documents\CLMagno_Bootcamp\de-bootcamp\Phase 2\dirty_cafe_sales.csv"
-output_path = r"C:\Users\Lynne\Documents\CLMagno_Bootcamp\de-bootcamp\Phase 2\clean_cafe_sales.csv"
-summary_path = r"C:\Users\Lynne\Documents\CLMagno_Bootcamp\de-bootcamp\Phase 2\clean_cafe_summary.csv"
+import_path = r"C:\Users\Lynne\Documents\CLMagno_Bootcamp\de-bootcamp\Phase 2\week5-project\dirty_cafe_sales.csv"
+output_path = r"C:\Users\Lynne\Documents\CLMagno_Bootcamp\de-bootcamp\Phase 2\week5-project\clean_cafe_sales.csv"
+summary_path = r"C:\Users\Lynne\Documents\CLMagno_Bootcamp\de-bootcamp\Phase 2\week5-project\clean_cafe_summary.csv"
+pivot_path = r"C:\Users\Lynne\Documents\CLMagno_Bootcamp\de-bootcamp\Phase 2\week5-project\clean_cafe_revenue_pivot.csv"
 
 df = pd.read_csv(import_path)
 
@@ -64,13 +65,25 @@ def summarize_item_month_year(df: pd.DataFrame) -> pd.DataFrame:
     )
     return summary
 
+def summary_pivot_table(summary: pd.DataFrame) -> pd.DataFrame:
+    # Revenue Pivot Table
+    pivot_table = summary.pivot_table(
+        index="month_year",
+        columns="item",
+        values="total_spent",
+        aggfunc="sum"
+    )
+    return pivot_table
+
 def main():
     clean_data = clean_up(df)
     summary = summarize_item_month_year(clean_data)
+    pivot_table = summary_pivot_table(summary)
     print(f"Clean rows: {len(clean_data)}")
     print(summary.head())
     clean_data.to_csv(output_path, index=False)
     summary.to_csv(summary_path, index=False)
+    pivot_table.to_csv(pivot_path)
 
 
 if __name__ == "__main__":
