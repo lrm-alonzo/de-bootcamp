@@ -68,8 +68,8 @@ def summarize_item_month_year(df: pd.DataFrame) -> pd.DataFrame:
 def summary_pivot_table(summary: pd.DataFrame) -> pd.DataFrame:
     # Revenue Pivot Table
     pivot_table = summary.pivot_table(
-        index="month_year",
-        columns="item",
+        index="item",
+        columns="month_year",
         values="total_spent",
         aggfunc="sum"
     )
@@ -80,7 +80,7 @@ def main():
     summary = summarize_item_month_year(clean_data)
     pivot_table = summary_pivot_table(summary)
     print(f"Clean rows: {len(clean_data)}")
-    print(summary.head())
+    print(pivot_table)
     clean_data.to_csv(output_path, index=False)
     summary.to_csv(summary_path, index=False)
     pivot_table.to_csv(pivot_path)
