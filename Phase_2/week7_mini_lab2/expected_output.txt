@@ -1,0 +1,4 @@
+{
+  "statusCode": 200,
+  "body": "{\"pipeline\": \"data-upload-pipeline\", \"run_at\": \"2026-09-25T07:05:45Z\", \"event\": {\"test\": \"event\"}, \"status\": \"ok\"}"
+}

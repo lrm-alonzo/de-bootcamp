@@ -1,0 +1,1 @@
+top5_coins.csv is successfully uploaded to s3://lynne-data-engineering-labs/week7/mini-lab-1/top5_coins.csv
