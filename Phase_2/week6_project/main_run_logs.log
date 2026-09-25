@@ -1,0 +1,59 @@
+2026-09-24 23:24:11,833 - main_run - INFO - ========== Main script starts ==========
+2026-09-24 23:24:11,833 - main_run - INFO - Fetching data...
+2026-09-24 23:24:11,834 - main_run - INFO - Fetching page 1...
+2026-09-24 23:24:13,623 - main_run - INFO - Page 1 received with 50 coins.
+2026-09-24 23:24:23,624 - main_run - INFO - Fetching page 2...
+2026-09-24 23:24:25,094 - main_run - INFO - Page 2 received with 50 coins.
+2026-09-24 23:24:35,095 - main_run - INFO - Total coins fetched: 100
+2026-09-24 23:24:35,096 - main_run - INFO - Done fetching data...
+2026-09-24 23:24:35,097 - main_run - INFO - Transforming data...
+2026-09-24 23:24:35,115 - main_run - INFO - Total rows in DataFrame: 100
+2026-09-24 23:24:35,115 - main_run - INFO - Data transformation completed.
+2026-09-24 23:24:35,157 - main_run - INFO - Database connection successful to CoinGecko at localhost:5432
+2026-09-24 23:24:35,157 - main_run - INFO - Execution of Creation Schema SQL script start...
+2026-09-24 23:24:35,226 - main_run - INFO - Successfully executed Creation Schema SQL script
+2026-09-24 23:24:35,229 - main_run - INFO - Inserting records...
+2026-09-24 23:24:35,248 - main_run - INFO - Inserted 100 rows into raw_coins table
+2026-09-24 23:24:35,248 - main_run - INFO - raw_coins table now has 100 rows in total
+2026-09-24 23:24:35,257 - main_run - INFO - Inserted 100 rows into raw_market_data table
+2026-09-24 23:24:35,257 - main_run - INFO - raw_market_data table now has 100 rows in total
+2026-09-24 23:24:35,266 - main_run - INFO - Inserted 100 rows into raw_performance table
+2026-09-24 23:24:35,267 - main_run - INFO - raw_performance table now has 100 rows in total
+2026-09-24 23:24:35,274 - main_run - INFO - Inserted 100 rows into raw_supply table
+2026-09-24 23:24:35,274 - main_run - INFO - raw_supply table now has 100 rows in total
+2026-09-24 23:24:35,285 - main_run - INFO - Inserted 100 rows into raw_all_time_data table
+2026-09-24 23:24:35,285 - main_run - INFO - raw_all_time_data table now has 100 rows in total
+2026-09-24 23:24:35,293 - main_run - INFO - Inserted 100 rows into raw_roi table
+2026-09-24 23:24:35,294 - main_run - INFO - raw_roi table now has 100 rows in total
+2026-09-24 23:24:35,294 - main_run - INFO - Data from API are successfully inserted into raw tables.
+2026-09-24 23:24:35,294 - main_run - INFO - Execution of Insert Dim and Fact SQL script start...
+2026-09-24 23:24:35,315 - main_run - INFO - Successfully inserted records to Dim and Fact tables
+2026-09-24 23:24:35,316 - main_run - INFO - ========== Main script execution completed successfully! ==========
+2026-09-25 10:58:36,890 - main_run - INFO - Fetching data...
+2026-09-25 10:58:36,890 - main_run - INFO - Fetching page 1...
+2026-09-25 10:58:37,281 - main_run - INFO - Page 1 received with 50 coins.
+2026-09-25 10:58:42,283 - main_run - INFO - Fetching page 2...
+2026-09-25 10:58:42,980 - main_run - INFO - Page 2 received with 50 coins.
+2026-09-25 10:58:47,981 - main_run - INFO - Fetching page 3...
+2026-09-25 10:58:48,509 - main_run - INFO - Page 3 received with 50 coins.
+2026-09-25 10:58:53,509 - main_run - INFO - Total coins fetched: 150
+2026-09-25 10:58:53,510 - main_run - INFO - Done fetching data...
+2026-09-25 10:58:53,511 - main_run - INFO - Transforming data...
+2026-09-25 10:58:53,577 - main_run - INFO - Total rows in DataFrame: 150
+2026-09-25 10:58:53,577 - main_run - INFO - Data transformation completed.
+2026-09-25 10:58:53,577 - main_run - INFO - Inserting records...
+2026-09-25 10:58:53,713 - main_run - INFO - Inserted 150 rows into raw_coins table
+2026-09-25 10:58:53,714 - main_run - INFO - raw_coins table now has 250 rows in total
+2026-09-25 10:58:53,728 - main_run - INFO - Inserted 150 rows into raw_market_data table
+2026-09-25 10:58:53,731 - main_run - INFO - raw_market_data table now has 250 rows in total
+2026-09-25 10:58:53,741 - main_run - INFO - Inserted 150 rows into raw_performance table
+2026-09-25 10:58:53,742 - main_run - INFO - raw_performance table now has 250 rows in total
+2026-09-25 10:58:53,752 - main_run - INFO - Inserted 150 rows into raw_supply table
+2026-09-25 10:58:53,754 - main_run - INFO - raw_supply table now has 250 rows in total
+2026-09-25 10:58:53,767 - main_run - INFO - Inserted 150 rows into raw_all_time_data table
+2026-09-25 10:58:53,769 - main_run - INFO - raw_all_time_data table now has 250 rows in total
+2026-09-25 10:58:53,780 - main_run - INFO - Inserted 150 rows into raw_roi table
+2026-09-25 10:58:53,782 - main_run - INFO - raw_roi table now has 250 rows in total
+2026-09-25 10:58:53,782 - main_run - INFO - Data from API are successfully inserted into raw tables.
+2026-09-25 10:58:53,782 - main_run - INFO - Execution of Insert Dim and Fact SQL script start...
+2026-09-25 10:58:53,823 - main_run - INFO - Successfully inserted records to Dim and Fact tables
