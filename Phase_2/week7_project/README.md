@@ -1,8 +1,8 @@
 # Employee Attendance ETL Pipeline Using AWS
-Data Engineering Bootcamp – Phase 2, Week 7 Project
+  Data Engineering Bootcamp – Phase 2, Week 7 Project
 -----------------------------------------------------------------------------------
 # Goal
-Deploy data processing scripts to AWS and make the processed data accessible in the cloud.
+  Deploy data processing scripts to AWS and make the processed data accessible in the cloud.
 -----------------------------------------------------------------------------------
 # Features
 1. Fetch employee details from an API and save them as a JSON file.
@@ -14,7 +14,7 @@ Deploy data processing scripts to AWS and make the processed data accessible in 
 7. Query processed data using Amazon Athena.
 -----------------------------------------------------------------------------------
 # How it works
-This project consists of two AWS Glue jobs and one AWS Glue crawler.
+  This project consists of two AWS Glue jobs and one AWS Glue crawler.
 
 1. fetch-employee-job
 Purpose: Retrieve employee details from an API and store the data in Amazon S3.
