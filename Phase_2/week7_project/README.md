@@ -67,11 +67,11 @@ Service:
 -----------------------------------------------------------------------------------
 # Deployment Steps
 Step 1: Create an S3 Bucket
-- Create an S3 bucket for storing raw and processed files.
+1. Create an S3 bucket for storing raw and processed files.
 <img width="1912" height="442" alt="image" src="https://github.com/user-attachments/assets/990f9976-5ce4-4f9d-addf-1bf5c2c624be" />
 
 Step 2: Upload Project Scripts
-- Upload the ETL scripts to the scripts folder.
+1. Upload the ETL scripts to the scripts folder.
 <img width="1377" height="431" alt="image" src="https://github.com/user-attachments/assets/db89b35c-08d6-4fd7-bf63-512320a2b919" />
 
 Step 3: Create the fetch-employee-job
@@ -106,4 +106,36 @@ The ETL script automatically:
 
 Expected output will be saved in: s3://lynne-data-engineering-labs/week7/project_employee_etl/combined/
 <img width="1147" height="415" alt="image" src="https://github.com/user-attachments/assets/2efba685-f789-4d16-a1c8-08fad4cbce09" />
+
+Step 6: Configure AWS Glue Crawler
+1. Create a crawler with the following settings:
+- Crawler Name: employee_attendance_crawler
+- Data Source: s3://lynne-data-engineering-labs/week7/project_employee_etl/combined/
+- Database: employee_etl_project
+2. Run the crawler after the ETL job completes.
+
+Step 7: Create the AWS Glue Workflow
+1. Open the AWS Glue Console.
+2. Create a new workflow named: employee-etl-workflow
+3. Configure the workflow
+4. Save the workflow.
+<img width="1916" height="628" alt="image" src="https://github.com/user-attachments/assets/98b501fe-e42f-45af-bf7b-898adab7dbb1" />
+
+The workflow automates the execution of the ETL pipeline and ensures that each component runs in the correct sequence.
+
+Step 8: Query Data Using Amazon Athena
+Sample query:
+
+SELECT *
+FROM employee_db.employee_attendance
+LIMIT 10;
+-----------------------------------------------------------------------------------
+# Execution Flow
+1. Upload attendance data to the partitioned S3 folder.
+2. Start the employee-etl-workflow.
+3. The workflow runs:
+  - fetch-employee-job
+  - employee-attendance-etl
+  - employee_attendance_crawler
+4. Query the processed data using Amazon Athena.
 
