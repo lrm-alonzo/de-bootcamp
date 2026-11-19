@@ -1,8 +1,8 @@
 # Employee Attendance ETL Pipeline Using AWS
-  Data Engineering Bootcamp – Phase 2, Week 7 Project
+- Data Engineering Bootcamp – Phase 2, Week 7 Project
 -----------------------------------------------------------------------------------
 # Goal
-  Deploy data processing scripts to AWS and make the processed data accessible in the cloud.
+- Build and deploy an AWS-based ETL pipeline that ingests employee and attendance data, transforms and combines the datasets, and makes the processed data available for cloud-based analytics and querying.
 -----------------------------------------------------------------------------------
 # Features
 1. Fetch employee details from an API and save them as a JSON file.
