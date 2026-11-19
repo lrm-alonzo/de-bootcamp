@@ -67,6 +67,43 @@ Service:
 -----------------------------------------------------------------------------------
 # Deployment Steps
 Step 1: Create an S3 Bucket
-Create an S3 bucket for storing raw and processed files.
+- Create an S3 bucket for storing raw and processed files.
 <img width="1912" height="442" alt="image" src="https://github.com/user-attachments/assets/990f9976-5ce4-4f9d-addf-1bf5c2c624be" />
+
+Step 2: Upload Project Scripts
+- Upload the ETL scripts to the scripts folder.
+<img width="1377" height="431" alt="image" src="https://github.com/user-attachments/assets/db89b35c-08d6-4fd7-bf63-512320a2b919" />
+
+Step 3: Create the fetch-employee-job
+1. Open AWS Glue Console.
+2. Create a new Job.
+3. Select the appropriate IAM Role.
+4. Configure the script location: s3://lynne-data-engineering-labs/week7/project_employee_etl/scripts/fetch_employee.py
+5. Save the job.
+
+Expected output will be saved in: s3://lynne-data-engineering-labs/week7/project_employee_etl/raw/employees/
+<img width="1157" height="433" alt="image" src="https://github.com/user-attachments/assets/5534ec00-d376-449c-9ea1-3de6fc078515" />
+
+Step 4: Upload Attendance File
+1. Create a date-based partitioned folder in Amazon S3 using the following format: YYYY/MM/DD
+2. Upload the attendance CSV file to the appropriate partition folder.
+<img width="1137" height="375" alt="image" src="https://github.com/user-attachments/assets/2f549f84-e576-47a4-bfaa-b2d0dc5e2222" />
+<img width="1158" height="412" alt="image" src="https://github.com/user-attachments/assets/ed376418-2628-4fb3-94e8-2f532c0e76b4" />
+
+Step 5: Create the employee-attendance-etl Job
+1. Open AWS Glue Console.
+2. Create a new Job.
+3. Select the appropriate IAM Role.
+4. Configure the script location: s3://lynne-data-engineering-labs/week7/project_employee_etl/scripts/employee_attendance_etl.py
+5. Save the job.
+
+The ETL script automatically:
+- Reads employee details from the designated S3 location.
+- Reads attendance data from the date-partitioned attendance folder.
+- Performs data cleansing and transformations.
+- Combines employee details and attendance records.
+- Writes the processed output to the configured date-based partitioned folder.
+
+Expected output will be saved in: s3://lynne-data-engineering-labs/week7/project_employee_etl/combined/
+<img width="1147" height="415" alt="image" src="https://github.com/user-attachments/assets/2efba685-f789-4d16-a1c8-08fad4cbce09" />
 
