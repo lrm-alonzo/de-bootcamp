@@ -68,3 +68,5 @@ Service:
 # Deployment Steps
 Step 1: Create an S3 Bucket
 Create an S3 bucket for storing raw and processed files.
+<img width="1912" height="442" alt="image" src="https://github.com/user-attachments/assets/990f9976-5ce4-4f9d-addf-1bf5c2c624be" />
+
