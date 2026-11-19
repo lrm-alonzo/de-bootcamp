@@ -13,44 +13,6 @@ Deploy data processing scripts to AWS and make the processed data accessible in 
 6. Automatically catalog the data using AWS Glue Crawler.
 7. Query processed data using Amazon Athena.
 -----------------------------------------------------------------------------------
-# Architecture
-Employee API
-     |
-     v
-fetch-employee-job
-     |
-     v
-Employee Details JSON
-     |
-     v
-Amazon S3
-     |
-     +-------------------+
-     |                   |
-     |                   v
-     |         Employee Attendance CSV
-     |           (Manual Upload)
-     |                   |
-     +-------------------+
-             |
-             v
-employee-attendance-etl
-             |
-             v
-Processed Employee Data
-             |
-             v
-Amazon S3
-             |
-             v
-AWS Glue Crawler
-             |
-             v
-Glue Data Catalog
-             |
-             v
-Amazon Athena
------------------------------------------------------------------------------------
 # How it works
 This project consists of two AWS Glue jobs and one AWS Glue crawler.
 
@@ -100,8 +62,8 @@ Service                  Purpose
 Amazon S3                Data storage
 AWS Glue Jobs            ETL processing
 AWS Glue Crawler         Schema discovery
-AWS Glue Data Catalog	   Metadata repository
-Amazon Athena	           SQL querying
+AWS Glue Data Catalog	Metadata repository
+Amazon Athena	          SQL querying
 -----------------------------------------------------------------------------------
 # Deployment Steps
 Step 1: Create an S3 Bucket
