@@ -58,12 +58,12 @@ Process:
 -----------------------------------------------------------------------------------
 # AWS Services Used
 
-Service                  Purpose
-Amazon S3                Data storage
-AWS Glue Jobs            ETL processing
-AWS Glue Crawler         Schema discovery
-AWS Glue Data Catalog	Metadata repository
-Amazon Athena	          SQL querying
+Service:
+- Amazon S3:               Data storage
+- AWS Glue Jobs:           ETL processing
+- AWS Glue Crawler:        Schema discovery
+- AWS Glue Data Catalog:	 Metadata repository
+- Amazon Athena:	         SQL querying
 -----------------------------------------------------------------------------------
 # Deployment Steps
 Step 1: Create an S3 Bucket
