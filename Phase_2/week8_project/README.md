@@ -45,6 +45,7 @@ All staging, dimension, fact, and mart tables are implemented as physical tables
   -- Store transformed datasets in Parquet format.
   -- Partition the fact_sales table by order_month.
   -- Use a dimensional star schema design to simplify reporting and analytics workloads.
+
 **Step 4: Build dashboard-ready SQL queries**
 SQL queries can be found here: https://github.com/lrm-alonzo/de-bootcamp/blob/master/Phase_2/week8_project/Dashboard_ready_SQL_queries.sql
 -----------------------------------------------------------------------------------
