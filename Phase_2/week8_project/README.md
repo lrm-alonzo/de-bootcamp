@@ -12,10 +12,10 @@
 
 -----------------------------------------------------------------------------------
 # Deployment Steps
-**Step 1: Create an S3 Bucket and upload Source files.**
+Step 1: Create an S3 Bucket and upload Source files.
 <img width="1360" height="398" alt="image" src="https://github.com/user-attachments/assets/c627fcd6-6119-448d-a438-245febb83582" />
 
-**Step 2: Create the Data Warehouse Layers in Amazon Athena**
+Step 2: Create the Data Warehouse Layers in Amazon Athena
 Create external tables for the raw datasets and transform the data into a dimensional data warehouse architecture consisting of:
   1. Raw Tables:
   - raw_orders
@@ -40,13 +40,13 @@ Create external tables for the raw datasets and transform the data into a dimens
 
 All staging, dimension, fact, and mart tables are implemented as physical tables using CTAS (CREATE TABLE AS SELECT) and stored in Parquet format.
 
-**Step 3: Implement Data Warehouse Optimization**
+Step 3: Implement Data Warehouse Optimization
 - Apply data warehouse optimization techniques to improve analytical query performance:
   -- Store transformed datasets in Parquet format.
   -- Partition the fact_sales table by order_month.
   -- Use a dimensional star schema design to simplify reporting and analytics workloads.
 
-**Step 4: Build dashboard-ready SQL queries**
+Step 4: Build dashboard-ready SQL queries
 SQL queries can be found here: https://github.com/lrm-alonzo/de-bootcamp/blob/master/Phase_2/week8_project/Dashboard_ready_SQL_queries.sql
 -----------------------------------------------------------------------------------
 # Optimization
