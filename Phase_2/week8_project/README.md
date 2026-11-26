@@ -21,6 +21,7 @@ Create external tables for the raw datasets and transform the data into a dimens
   - stg_orders
   - stg_people
   - stg_returns
+
 3.Dimension Tables:
   - dim_customer
   - dim_product
