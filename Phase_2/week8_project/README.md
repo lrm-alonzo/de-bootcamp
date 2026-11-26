@@ -7,10 +7,6 @@
 - Apply partitioning and Parquet-based storage optimization for analytics workloads.
 - Create dashboard-ready data marts and SQL queries that support sales performance analysis and business decision-making.
 -----------------------------------------------------------------------------------
-# Entity Relationship Diagram
-<img width="951" height="688" alt="image" src="https://github.com/user-attachments/assets/561f3b30-1fa5-42df-a159-532dba3cc7af" />
-
------------------------------------------------------------------------------------
 # Deployment Steps
 Step 1: Create an S3 Bucket and upload Source files.
 <img width="1360" height="398" alt="image" src="https://github.com/user-attachments/assets/c627fcd6-6119-448d-a438-245febb83582" />
@@ -39,6 +35,7 @@ Create external tables for the raw datasets and transform the data into a dimens
   - mart_regional_sales
 
 All staging, dimension, fact, and mart tables are implemented as physical tables using CTAS (CREATE TABLE AS SELECT) and stored in Parquet format.
+<img width="951" height="688" alt="image" src="https://github.com/user-attachments/assets/561f3b30-1fa5-42df-a159-532dba3cc7af" />
 
 Step 3: Implement Data Warehouse Optimization
 - Apply data warehouse optimization techniques to improve analytical query performance:
@@ -56,6 +53,8 @@ Since Amazon Athena does not support native clustering keys, performance optimiz
     - Table: **fact_sales**
     - Column: **order_month**
     - Why: The project focuses on analyzing BrightCart's 2026 sales performance, with most reporting requirements based on monthly trends. Partitioning the fact table by order_month allows Athena to scan only the required monthly partition instead of the entire dataset, reducing query execution time and data scanned.
+<img width="1367" height="630" alt="image" src="https://github.com/user-attachments/assets/0877bb35-56a7-40f5-a4fb-86d9c0efc256" />
+
      
 2. Parquet Storage Format:
    - Storage Format: PARQUET
