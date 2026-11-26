@@ -9,6 +9,7 @@
 -----------------------------------------------------------------------------------
 # Entity Relationship Diagram
 <img width="951" height="688" alt="image" src="https://github.com/user-attachments/assets/561f3b30-1fa5-42df-a159-532dba3cc7af" />
+
 -----------------------------------------------------------------------------------
 # Deployment Steps
 **Step 1: Create an S3 Bucket and upload Source files.**
