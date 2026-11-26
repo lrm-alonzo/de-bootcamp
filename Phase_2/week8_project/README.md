@@ -13,23 +13,23 @@ Step 1: Create an S3 Bucket and upload Source files.
 
 Step 2: Create the Data Warehouse Layers in Amazon Athena
 Create external tables for the raw datasets and transform the data into a dimensional data warehouse architecture consisting of:
-  1. Raw Tables:
+1. Raw Tables:
   - raw_orders
   - raw_people
   - raw_returns
-  2. Staging Tables:
+2. Staging Tables:
   - stg_orders
   - stg_people
   - stg_returns
-  3.Dimension Tables:
+3.Dimension Tables:
   - dim_customer
   - dim_product
   - dim_location
   - dim_order_date
   - dim_ship_date
-  4. Fact Table
+4. Fact Table
   - fact_sales
-  5. Mart Tables
+5. Mart Tables
   - mart_sales_summary
   - mart_product_performance
   - mart_regional_sales
