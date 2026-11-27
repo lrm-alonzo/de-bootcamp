@@ -30,11 +30,15 @@ Create external tables for the raw datasets and transform the data into a dimens
   - dim_order_date
   - dim_ship_date
 4. Fact Table
-  - fact_sales: Added a returned flag for return orders by joining stg_returns
+  - fact_sales: Added a returned flag for return orders by joining to stg_returns
 5. Mart Tables
-  - mart_sales_summary
+  - mart_daily_sales
+  - mart_monthly_sales
+  - mart_quarterly_sales
   - mart_product_performance
   - mart_regional_sales
+  - mart_sales_city
+  - mart_category
 
 All staging, dimension, fact, and mart tables are implemented as physical tables using CTAS (CREATE TABLE AS SELECT) and stored in Parquet format.
 
@@ -43,11 +47,11 @@ All staging, dimension, fact, and mart tables are implemented as physical tables
 Step 3: Implement Data Warehouse Optimization
 - Apply data warehouse optimization techniques to improve analytical query performance:
   - Store transformed datasets in Parquet format.
-  - Partition the fact_sales table by order_month.
+  - Partition the fact_sales table by order_year_month.
   - Use a dimensional star schema design to simplify reporting and analytics workloads.
 
-Step 4: Build dashboard-ready SQL queries
-  - SQL queries can be found here: https://github.com/lrm-alonzo/de-bootcamp/blob/master/Phase_2/week8_project/Dashboard_ready_SQL_queries.sql
+Step 4: Build dashboard-ready SQL queries as Mart tables
+  - SQL queries can be found here: https://github.com/lrm-alonzo/de-bootcamp/blob/master/Phase_2/week8_project/mart_tables_schema.sql
 -----------------------------------------------------------------------------------
 # Optimization
 Performance optimization was achieved through partitioning and Parquet columnar storage.
