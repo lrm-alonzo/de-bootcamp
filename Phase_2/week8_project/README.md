@@ -58,7 +58,8 @@ Bucketing was considered but not implemented
     - Table: **fact_sales**
     - Column: **order_year_month**
     - Why: The project focuses on analyzing BrightCart's sales performance, with most reporting requirements involve analyzing sales trends over time. To support this, the fact_sales table is partitioned by order_year_month (YYYY-MM). This structure allows Athena to read only the relevant monthly partition when queries are filtered by a specific period, rather than scanning the entire dataset.
-<img width="1367" height="630" alt="image" src="https://github.com/user-attachments/assets/0877bb35-56a7-40f5-a4fb-86d9c0efc256" />
+<img width="1362" height="722" alt="image" src="https://github.com/user-attachments/assets/660b32a9-fbd1-4991-9c20-33a13df2324e" />
+
 
 2. Parquet Storage Format:
    - Storage Format: PARQUET
