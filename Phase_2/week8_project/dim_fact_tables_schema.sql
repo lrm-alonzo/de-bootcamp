@@ -99,3 +99,4 @@ SELECT
 FROM        stg_orders o
 LEFT JOIN   stg_returns r
             ON o.order_id = r.order_id;
+            

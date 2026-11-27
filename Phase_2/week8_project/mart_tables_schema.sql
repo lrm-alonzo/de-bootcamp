@@ -88,7 +88,6 @@ JOIN        stg_people p
 GROUP BY    l.region, p.regional_manager
 ORDER BY    total_sales DESC;
 
-
 -- Top 5 City by Revenue
 CREATE TABLE mart_sales_city
 WITH (

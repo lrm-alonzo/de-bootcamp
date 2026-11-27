@@ -35,7 +35,6 @@ SELECT
 FROM raw_orders;
 
 
-
 CREATE TABLE stg_people
 WITH (
     format = 'PARQUET'
