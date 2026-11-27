@@ -51,7 +51,7 @@ Step 3: Implement Data Warehouse Optimization
   - Use a dimensional star schema design to simplify reporting and analytics workloads.
 
 Step 4: Build dashboard-ready SQL queries
-  - SQL queries can be found here: https://github.com/lrm-alonzo/de-bootcamp/blob/master/Phase_2/week8_project/dim_fact_tables_schema.sql
+  - SQL queries can be found here: https://github.com/lrm-alonzo/de-bootcamp/blob/master/Phase_2/week8_project/dashboard_ready_sql_queries.sql
 -----------------------------------------------------------------------------------
 # Optimization
 Performance optimization was achieved through partitioning and Parquet columnar storage.
