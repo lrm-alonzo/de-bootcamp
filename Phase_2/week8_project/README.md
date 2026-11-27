@@ -50,7 +50,7 @@ Step 3: Implement Data Warehouse Optimization
   - Partition the fact_sales table by order_year_month.
   - Use a dimensional star schema design to simplify reporting and analytics workloads.
 
-Step 4: Build dashboard-ready SQL queries as Mart tables
+Step 4: Build dashboard-ready SQL queries
   - SQL queries can be found here: https://github.com/lrm-alonzo/de-bootcamp/blob/master/Phase_2/week8_project/mart_tables_schema.sql
 -----------------------------------------------------------------------------------
 # Optimization
