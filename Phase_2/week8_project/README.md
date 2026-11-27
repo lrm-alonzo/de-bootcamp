@@ -9,6 +9,7 @@
 -----------------------------------------------------------------------------------
 # Deployment Steps
 Step 1: Create an S3 Bucket and upload Source files.
+
 Source files are stored in CSV format using UTF-8 encoding to ensure consistent character encoding and compatibility across the data pipeline.
 <img width="1360" height="398" alt="image" src="https://github.com/user-attachments/assets/c627fcd6-6119-448d-a438-245febb83582" />
 
