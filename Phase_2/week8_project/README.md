@@ -38,8 +38,7 @@ Create external tables for the raw datasets and transform the data into a dimens
 
 All staging, dimension, fact, and mart tables are implemented as physical tables using CTAS (CREATE TABLE AS SELECT) and stored in Parquet format.
 
-<img width="1127" height="687" alt="image" src="https://github.com/user-attachments/assets/e7eb96f8-8909-46ba-ae47-bfda1a38c3f3" />
-
+<img width="1325" height="886" alt="image" src="https://github.com/user-attachments/assets/8bfde429-6e19-4411-8f65-ea5c2a93dde6" />
 
 Step 3: Implement Data Warehouse Optimization
 - Apply data warehouse optimization techniques to improve analytical query performance:
