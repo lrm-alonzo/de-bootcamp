@@ -9,6 +9,7 @@
 -----------------------------------------------------------------------------------
 # Deployment Steps
 Step 1: Create an S3 Bucket and upload Source files.
+Source files are stored in CSV format using UTF-8 encoding to ensure consistent character encoding and compatibility across the data pipeline.
 <img width="1360" height="398" alt="image" src="https://github.com/user-attachments/assets/c627fcd6-6119-448d-a438-245febb83582" />
 
 Step 2: Create the Data Warehouse Layers in Amazon Athena
@@ -28,7 +29,7 @@ Create external tables for the raw datasets and transform the data into a dimens
   - dim_order_date
   - dim_ship_date
 4. Fact Table
-  - fact_sales
+  - fact_sales: Added a returned flag for return orders by joining stg_returns
 5. Mart Tables
   - mart_sales_summary
   - mart_product_performance
@@ -49,19 +50,23 @@ Step 4: Build dashboard-ready SQL queries
   - SQL queries can be found here: https://github.com/lrm-alonzo/de-bootcamp/blob/master/Phase_2/week8_project/Dashboard_ready_SQL_queries.sql
 -----------------------------------------------------------------------------------
 # Optimization
-Since Amazon Athena does not support native clustering keys, performance optimization was achieved through partitioning and Parquet columnar storage.
+Performance optimization was achieved through partitioning and Parquet columnar storage.
+Bucketing was considered but not implemented
 
 1. Partitioning:
     - Table: **fact_sales**
-    - Column: **order_month**
-    - Why: The project focuses on analyzing BrightCart's 2026 sales performance, with most reporting requirements based on monthly trends. Partitioning the fact table by order_month allows Athena to scan only the required monthly partition instead of the entire dataset, reducing query execution time and data scanned.
+    - Column: **order_year_month**
+    - Why: The project focuses on analyzing BrightCart's sales performance, with most reporting requirements involve analyzing sales trends over time. To support this, the fact_sales table is partitioned by order_year_month (YYYY-MM). This structure allows Athena to read only the relevant monthly partition when queries are filtered by a specific period, rather than scanning the entire dataset.
 <img width="1367" height="630" alt="image" src="https://github.com/user-attachments/assets/0877bb35-56a7-40f5-a4fb-86d9c0efc256" />
 
-     
 2. Parquet Storage Format:
    - Storage Format: PARQUET
    - Why: Although Athena does not support native clustering keys, storing tables in Parquet format provides columnar storage optimization. Athena reads only the columns needed for a query, reducing the amount of data scanned and improving query performance for analytical workloads.
-
+  
+3. Bucketing Consideration:
+    - Columns: **customer_id, product_id**
+    - Why not used: Bucketing was considered but not implemented, as partitioning by order_year_month provides the greatest benefit for the project's date-based reporting requirements. Given the dataset size and query patterns, bucketing would add complexity with limited performance gains.
+      
 Benefits of Optimizing: 
   - Faster dashboard and reporting queries
   - Reduced data scanned by Athena
